@@ -1,0 +1,24 @@
+{
+  "name": "flexbox-julio",
+  "version": "1.0.0",
+  "description": "julio mobile tut",
+  "main": "script.js",
+  "scripts": {
+    "test": "run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ni-c0de-mus/flexbox-julio-js.git"
+  },
+  "author": "ni-c0de-mus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ni-c0de-mus/flexbox-julio-js/issues"
+  },
+  "homepage": "https://github.com/Ni-c0de-mus/flexbox-julio-js#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
