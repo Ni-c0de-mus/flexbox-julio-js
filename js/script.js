@@ -1,5 +1,11 @@
-alert("Hello! I am an alert box!!");
+// alert("Hello! I am an alert box!!");
 
-$('.menu').on('click', function () {
-    $(this).toggleClass('active');
+$(".menu").on("click", function() {
+  $(this).toggleClass("active");
+  $(".overlay").toggleClass("menu-open");
+});
+
+$('.nav a').on('click', function () {
+$('.menu').removeClass('active');
+$('.overlay').removeClass('menu-open');
 });
