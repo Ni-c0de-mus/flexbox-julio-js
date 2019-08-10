@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Abel|Dosis|Fjalla+One|Montserrat|Noto+Sans+JP|PT+Sans+Caption|PT+Sans+Narrow|Playfair+Display|Reem+Kufi|Ropa+Sans|Rubik|Baloo');
 
-
 /* Global Styles */
-
+* {
+    margin: 0;
+    padding: 0;
+}
 *,
 *::before,
 *::after {
@@ -87,7 +89,8 @@ a {
 }
 
 .between-sec {
-    padding: 20rem;
+    padding: 25rem 0;
+    text-align: center;
 }
 
 .between-sec-color {
@@ -123,14 +126,11 @@ header {
     cursor: pointer;
 }
 
-.menu .bar,
-.menu .bar::before,
-.menu .bar::after {
-    content: "";
+.menu .bar {
     position: absolute;
-    height: 2.5px;
+    height: 2px;
     width: 4rem;
-    background-color: var(--main-white);
+    background-color:var(--main-white);
     top: 0;
     left: 0;
     right: 0;
@@ -139,8 +139,20 @@ header {
     transition: 650ms;
 }
 
+.menu .bar,
+.menu .bar::before,
+.menu .bar::after {
+    content: "";
+    position: absolute;
+    height: 2.5px;
+    width: 4rem;
+    background-color: var(--main-white);
+    left: 0;
+    transition: 650ms;
+}
+
 .menu .bar:before {
-    top: -2rem;
+    top: -1rem;
 }
 
 .menu .bar:after {
@@ -166,6 +178,15 @@ header {
 
 /* Header - Nav */
 
+#logo {
+    display: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 300;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -5px;
+}
+
 .nav {
     width: 100%;
     height: 6rem;
@@ -174,7 +195,7 @@ header {
 }
 
 .overlay {
-    background-color: rgba(0, 0, 0,.9);
+    background-color: rgba(0, 0, 0, .9);
     position: fixed;
     right: 0;
     left: 0;
@@ -290,7 +311,7 @@ header {
 
 .image-group {
     display: grid;
-    grid-template-columns:  1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
 }
 
@@ -305,7 +326,7 @@ header {
 
 .fresh-ingredients {
     width: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0.5)), url('../img/between.jpeg') center no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5)), url('../img/between.jpeg') center no-repeat;
     background-size: cover;
 }
 
@@ -315,7 +336,7 @@ header {
 
 .citrus-goodness {
     width: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0.5)), url('../img/between2.jpeg') center no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5)), url('../img/between2.jpeg') center no-repeat;
     background-size: cover;
 }
 
@@ -333,7 +354,7 @@ header {
     min-width: 100%;
     margin: 5px 1rem;
     padding: 5px 1rem;
-    border-radius: 1px solid ;
+    border-radius: 1px solid;
     font-size: 1.5rem;
     border: 1px solid var(--main-font-color);
     color: #878787;
@@ -382,3 +403,127 @@ footer h4 {
     font-family: 'Rubik', sans-serif;
 }
 
+/* Media Queries */
+
+@media screen and (min-width: 769px) {
+
+    header,
+    .between-sec {
+        background-attachment: fixed;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    #logo {
+        display: block;
+    }
+
+    .nav {
+        display: flex;
+        padding: 2rem 10rem 0;
+        justify-content: space-between;
+    }
+
+    .nav .overlay {
+        position: initial;
+        background: none;
+        opacity: initial;
+        transform: initial;
+    }
+
+    .nav .overlay ul {
+        flex-direction: row;
+        list-style: none;
+        margin-top: 2px;
+    }
+
+    .nav .overlay ul li a {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        margin-right: -1px;
+        padding: 0 2rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .center {
+        flex: 1;
+    }
+
+    .add-flex: {
+        flex: 1;
+    }
+
+    .add-padding-right {
+        padding-right: 10rem;
+    }
+
+    .first {
+        order: 1;
+    }
+
+    .second {
+        order: 2;
+    }
+
+    .store {
+        min-height: 40rem;
+    }
+
+    .btn-info {
+        font-size: 1.8rem;
+    }
+
+    .main-text h1 {
+        transform: translateY(4rem);
+        opacity: 0;
+        animation: .5s fadeUp .5s forwards;
+    }
+
+    .main-text h2 {
+        transform: scale(2);
+        opacity: 0;
+        animation: fadeIn .5s forwards;
+    }
+
+    .main-text .main-btn {
+        opacity: 0;
+        animation: .5s fade 1s forwards;
+    }
+
+    @keyframes fadeIn {
+        0%{
+            transform: scale(2);
+            opacity: 0;
+        }
+        100%{
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeUp {
+        0%{
+            transform: translateY(4rem);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
